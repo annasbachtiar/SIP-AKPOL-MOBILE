@@ -62,11 +62,11 @@ flutter_native_splash:
   ios: false
 
   color: "#16192C"
-  image: assets/images/logo-akpol-text.png
+  image: assets/images/logo-splash-2.png
 
   android_12:
     color: "#16192C"
-    image: assets/images/logo-akpol-text.png
+    image: assets/images/logo-splash-2.png
 
 # The following section is specific to Flutter packages.
 flutter:

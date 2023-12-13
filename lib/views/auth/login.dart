@@ -71,16 +71,24 @@ class LoginPage extends StatelessWidget {
                             TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Username atau Email',
+                                labelStyle: TextStyle(color: Color(0xFF16192C)),
                                 border: OutlineInputBorder(),
                                 prefixIcon: Icon(Icons.person),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xFF16192C))
+                                )
                               ),
                             ),
                             const SizedBox(height: 16),
                             TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Password',
+                                labelStyle: TextStyle(color: Color(0xFF16192C)),
                                 border: OutlineInputBorder(),
-                                prefixIcon: Icon(Icons.lock)
+                                prefixIcon: Icon(Icons.lock),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Color(0xFF16192C))
+                                )
                               ),
                               obscureText: true,
                             ),
