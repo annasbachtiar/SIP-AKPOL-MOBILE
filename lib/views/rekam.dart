@@ -7,7 +7,15 @@ class RekamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rekam Page'),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Rekam',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30
+          ),
+        ),
       ),
     );
   }

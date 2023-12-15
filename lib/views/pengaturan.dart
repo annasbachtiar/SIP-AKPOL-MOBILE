@@ -7,7 +7,15 @@ class PengaturanPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pengaturan Page'),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Pengaturan',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30
+          ),
+        ),
       ),
     );
   }

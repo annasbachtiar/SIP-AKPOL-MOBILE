@@ -7,7 +7,15 @@ class NotifikasiPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifikasi Page'),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Notifikasi',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30
+          ),
+        ),
       ),
     );
   }
