@@ -98,7 +98,7 @@ class LoginPage extends StatelessWidget {
                               width: double.infinity,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Get.toNamed(Routes.homePage);
+                                  Get.toNamed(Routes.navigationBar);
                                 }, 
                                 style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
