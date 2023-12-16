@@ -29,7 +29,6 @@ class NavbarMenu extends StatelessWidget {
         ),
         child: Obx(
           () => NavigationBar(
-              
               elevation: 1,
               animationDuration: const Duration(milliseconds: 1000),
               destinations: const [

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:sip_akpol/views/auth/login.dart';
-import 'package:sip_akpol/views/homepage.dart';
+import 'package:sip_akpol/views/home/homepage.dart';
 import 'package:sip_akpol/views/layout/navbar.dart';
 import 'package:sip_akpol/views/notifikasi.dart';
 import 'package:sip_akpol/views/pengaturan.dart';
@@ -22,7 +22,8 @@ final getPages = [
   ),
   GetPage(
     name: Routes.navigationBar,
-    page: () => const NavbarMenu()
+    page: () => const NavbarMenu(),
+    transition: Transition.cupertino
   ),
   GetPage(
     name: Routes.homePage,

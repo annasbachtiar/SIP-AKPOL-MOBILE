@@ -98,13 +98,12 @@ class LoginPage extends StatelessWidget {
                               width: double.infinity,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Get.toNamed(Routes.navigationBar);
+                                  Get.offNamed(Routes.navigationBar);
                                 }, 
                                 style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                   foregroundColor: Colors.white,
                                   backgroundColor: const Color(0xFF16192C)
-                                  // backgroundColor: Colors.black
                                 ),
                                 child: const Text('LOGIN', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                               ),

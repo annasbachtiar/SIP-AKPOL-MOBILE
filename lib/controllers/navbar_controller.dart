@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:sip_akpol/views/homepage.dart';
+import 'package:sip_akpol/views/home/homepage.dart';
 import 'package:sip_akpol/views/notifikasi.dart';
 import 'package:sip_akpol/views/pengaturan.dart';
 import 'package:sip_akpol/views/rekam.dart';
