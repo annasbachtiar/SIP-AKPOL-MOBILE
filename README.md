@@ -1,6 +1,6 @@
-# sip_akpol
+# SIP AKPOL
 
-A new Flutter project.
+SIP AKPOL merupakan aplikasi untuk memberikan penilaian karakter dan memonitoring taruna Akademi Kepolisian Negara Republik Indonesia
 
 ## Getting Started
 
