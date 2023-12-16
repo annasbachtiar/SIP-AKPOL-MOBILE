@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sip_akpol/routes/routes.dart';
 import 'package:sip_akpol/controllers/homepage_controller.dart';
 import 'package:sip_akpol/views/home/homepage_widget.dart';
 
@@ -70,12 +71,12 @@ class HomePage extends StatelessWidget {
                         child: GridView.count(
                           crossAxisCount: 3,
                           children: [
-                            itemKegiatanHarian('Apel Rutin', Icons.event_note_outlined, Colors.indigo),
-                            itemKegiatanHarian('Petugas Piket', Icons.assignment_ind_outlined, Colors.red),
-                            itemKegiatanHarian('Rawat RS', Icons.vaccines_outlined, Colors.green),
-                            itemKegiatanHarian('Izin Berobat', Icons.local_pharmacy_outlined, Colors.amberAccent),
-                            itemKegiatanHarian('Dinas Ringan', Icons.work_outlined, Colors.brown),
-                            itemKegiatanHarian('Reputasi', Icons.local_activity_outlined, Colors.pink),
+                            itemKegiatanHarian('Apel Rutin', Icons.event_note_outlined, Colors.indigo, Routes.apelRutinPage),
+                            itemKegiatanHarian('Petugas Piket', Icons.assignment_ind_outlined, Colors.red, Routes.petugasPiketPage),
+                            itemKegiatanHarian('Rawat RS', Icons.vaccines_outlined, Colors.green, Routes.rawatRSPage),
+                            itemKegiatanHarian('Izin Berobat', Icons.local_pharmacy_outlined, Colors.amberAccent, Routes.izinBerobatPage),
+                            itemKegiatanHarian('Dinas Ringan', Icons.work_outlined, Colors.brown, Routes.dinasRinganPage),
+                            itemKegiatanHarian('Reputasi', Icons.local_activity_outlined, Colors.pink, Routes.reputasiPage),
                           ],
                         ),
                       )
@@ -106,10 +107,10 @@ class HomePage extends StatelessWidget {
                           ),
                           scrollDirection: Axis.horizontal,
                           children: [
-                            itemAkademik('Keterampilan', Icons.engineering, Colors.red),
-                            itemAkademik('Karakter', Icons.face, Colors.amber),
-                            itemAkademik('Jasmani', Icons.directions_run, Colors.indigo),
-                            itemAkademik('Kesehatan', Icons.monitor_heart, Colors.green),
+                            itemAkademik('Keterampilan', Icons.engineering, Colors.red, Routes.keterampilanPage),
+                            itemAkademik('Karakter', Icons.face, Colors.amber, Routes.karakterPage),
+                            itemAkademik('Jasmani', Icons.directions_run, Colors.indigo, Routes.jasmaniPage),
+                            itemAkademik('Kesehatan', Icons.monitor_heart, Colors.green, Routes.kesehatanPage),
                           ],
                         ),
                       )
@@ -131,8 +132,9 @@ class HomePage extends StatelessWidget {
                   itemData('Data Taruna', 'Subtitle Text', Icons.person, Colors.brown),
                 ],
               ),
-              
-              const SizedBox(height: 30)
+              const SizedBox(height: 20),
+              const Center(child: Text('© 2023 AKPOL', style: TextStyle(color: Colors.grey))),
+              const SizedBox(height: 5)
             ],
           ),
         ),
@@ -141,76 +143,82 @@ class HomePage extends StatelessWidget {
   }
 }
 
-itemKegiatanHarian(String title, IconData iconData, Color background) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: background,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(2,2)
-            )
-          ]
+itemKegiatanHarian(String title, IconData iconData, Color background, String routeName) {
+  return GestureDetector(
+    onTap: () => Get.toNamed(routeName),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: background,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 5,
+                offset: const Offset(2,2)
+              )
+            ]
+          ),
+          child: Icon(iconData, color: Colors.white)
         ),
-        child: Icon(iconData, color: Colors.white)
-      ),
-      const SizedBox(height: 8),
-      Text(title),
-    ],
+        const SizedBox(height: 8),
+        Text(title),
+      ],
+    ),
   );
 }
 
-itemAkademik(String title, IconData iconData, Color gridColor) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Stack(
-        children: [
-          Container(
-            height: 120,
-            width: 120,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey.withOpacity(0.2)),
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 5,
-                  offset: const Offset(2,2)
-                )
-              ]
-            ),
-          ),
-          SizedBox(
-            height: 90,
-            width: 120,
-            child: Icon(iconData, color: gridColor, size: 70),
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              height: 30,
+itemAkademik(String title, IconData iconData, Color gridColor, String routeName) {
+  return GestureDetector(
+    onTap: () => Get.toNamed(routeName),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Stack(
+          children: [
+            Container(
+              height: 120,
               width: 120,
               decoration: BoxDecoration(
-                color: gridColor,
+                color: Colors.white,
                 border: Border.all(color: Colors.grey.withOpacity(0.2)),
-                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10))
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 5,
+                    offset: const Offset(2,2)
+                  )
+                ]
               ),
-              child: Center(child: Text(title, style: const TextStyle(color: Colors.white))),
             ),
-          )
-        ]
-      ),
-    ],
+            SizedBox(
+              height: 90,
+              width: 120,
+              child: Icon(iconData, color: gridColor, size: 70),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Container(
+                height: 30,
+                width: 120,
+                decoration: BoxDecoration(
+                  color: gridColor,
+                  border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                  borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10))
+                ),
+                child: Center(child: Text(title, style: const TextStyle(color: Colors.white))),
+              ),
+            )
+          ]
+        ),
+      ],
+    ),
   );
 }
 
