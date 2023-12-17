@@ -14,7 +14,7 @@ import 'package:sip_akpol/views/kegiatan_harian/reputasi.dart';
 import 'package:sip_akpol/views/layout/navbar.dart';
 import 'package:sip_akpol/views/notifikasi.dart';
 import 'package:sip_akpol/views/pengaturan.dart';
-import 'package:sip_akpol/views/rekam.dart';
+import 'package:sip_akpol/views/rekam/rekam.dart';
 
 //===== Inisialisasi Nama Route =====//
 class Routes {
