@@ -118,6 +118,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              
               // ===== BAGIAN DATA ===== //
               const SizedBox(height: 10),
               Container(

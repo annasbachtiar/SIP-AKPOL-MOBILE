@@ -35,7 +35,7 @@ class RekamPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   itemRekam('Rekam Pujian', Icons.thumb_up_alt, Colors.indigoAccent),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   itemRekam('Rekam Pelanggaran', Icons.thumb_down_alt, Colors.redAccent)
                 ],
               ),
@@ -55,8 +55,8 @@ itemRekam(String title, IconData iconData, Color gridColor) {
         Stack(
             children: [
               Container(
-                height: 250,
-                width: 250,
+                height: 200,
+                width: 200,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.grey.withOpacity(0.5)),
@@ -72,15 +72,15 @@ itemRekam(String title, IconData iconData, Color gridColor) {
                 ),
               ),
               SizedBox(
-                height: 210,
-                width: 250,
-                child: Icon(iconData, color: gridColor, size: 150),
+                height: 160,
+                width: 200,
+                child: Icon(iconData, color: gridColor, size: 100),
               ),
               Positioned(
                 bottom: 0,
                 child: Container(
                   height: 40,
-                  width: 250,
+                  width: 200,
                   decoration: BoxDecoration(
                     color: gridColor,
                     border: Border.all(color: Colors.grey.withOpacity(0.2)),
@@ -92,7 +92,7 @@ itemRekam(String title, IconData iconData, Color gridColor) {
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20
+                        fontSize: 18
                       )
                     )
                   ),

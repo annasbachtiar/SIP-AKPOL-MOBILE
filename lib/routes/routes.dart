@@ -13,7 +13,9 @@ import 'package:sip_akpol/views/kegiatan_harian/rawat_rs.dart';
 import 'package:sip_akpol/views/kegiatan_harian/reputasi.dart';
 import 'package:sip_akpol/views/layout/navbar.dart';
 import 'package:sip_akpol/views/notifikasi.dart';
-import 'package:sip_akpol/views/pengaturan.dart';
+import 'package:sip_akpol/views/pengaturan/edit_profil.dart';
+import 'package:sip_akpol/views/pengaturan/ganti_password.dart';
+import 'package:sip_akpol/views/pengaturan/pengaturan.dart';
 import 'package:sip_akpol/views/rekam/rekam.dart';
 
 //===== Inisialisasi Nama Route =====//
@@ -36,13 +38,17 @@ class Routes {
   static String karakterPage = '/karakter';
   static String jasmaniPage = '/jasmani';
   static String kesehatanPage = '/kesehatan';
+
+  static String editProfilPage = '/edit_profil';
+  static String gantiPasswordPage = '/ganti_password';
 }
 
 final getPages = [
   //===== Halaman Awal =====//
   GetPage(
     name: Routes.loginPage, 
-    page: () => const LoginPage()
+    page: () => const LoginPage(),
+    transition: Transition.leftToRight,
   ),
   GetPage(
     name: Routes.navigationBar,
@@ -121,4 +127,15 @@ final getPages = [
     transition: Transition.cupertino
   ),
   
+  // Rute Pengaturan
+  GetPage(
+    name: Routes.editProfilPage,
+    page: () => const EditProfilPage(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: Routes.gantiPasswordPage,
+    page: () => const GantiPasswordPage(),
+    transition: Transition.cupertino
+  ),
 ];
