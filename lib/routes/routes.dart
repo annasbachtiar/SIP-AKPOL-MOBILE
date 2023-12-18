@@ -17,6 +17,8 @@ import 'package:sip_akpol/views/pengaturan/edit_profil.dart';
 import 'package:sip_akpol/views/pengaturan/ganti_password.dart';
 import 'package:sip_akpol/views/pengaturan/pengaturan.dart';
 import 'package:sip_akpol/views/rekam/rekam.dart';
+import 'package:sip_akpol/views/rekam/rekam_pelanggaran.dart';
+import 'package:sip_akpol/views/rekam/rekam_pujian.dart';
 
 //===== Inisialisasi Nama Route =====//
 class Routes {
@@ -38,6 +40,9 @@ class Routes {
   static String karakterPage = '/karakter';
   static String jasmaniPage = '/jasmani';
   static String kesehatanPage = '/kesehatan';
+
+  static String rekamPujianPage = '/rekam_pujian';
+  static String rekamPelanggaranPage = '/rekam_pelanggaran';
 
   static String editProfilPage = '/edit_profil';
   static String gantiPasswordPage = '/ganti_password';
@@ -126,8 +131,20 @@ final getPages = [
     page: () => const KesehatanPage(),
     transition: Transition.cupertino
   ),
+
+  //===== Rute Rekam =====//
+  GetPage(
+    name: Routes.rekamPujianPage,
+    page: () => const RekamPujianPage(),
+    transition: Transition.cupertino
+  ),
+  GetPage(
+    name: Routes.rekamPelanggaranPage,
+    page: () => const RekamPelanggaranPage(),
+    transition: Transition.cupertino
+  ),
   
-  // Rute Pengaturan
+  //===== Rute Pengaturan =====//
   GetPage(
     name: Routes.editProfilPage,
     page: () => const EditProfilPage(),

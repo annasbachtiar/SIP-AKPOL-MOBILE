@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sip_akpol/routes/routes.dart';
 
 class RekamPage extends StatelessWidget {
   const RekamPage({super.key});
@@ -34,9 +36,9 @@ class RekamPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  itemRekam('Rekam Pujian', Icons.thumb_up_alt, Colors.indigoAccent),
+                  itemRekam('Rekam Pujian', Icons.thumb_up_alt, Colors.indigoAccent, Routes.rekamPujianPage),
                   const SizedBox(height: 30),
-                  itemRekam('Rekam Pelanggaran', Icons.thumb_down_alt, Colors.redAccent)
+                  itemRekam('Rekam Pelanggaran', Icons.thumb_down_alt, Colors.redAccent, Routes.rekamPelanggaranPage)
                 ],
               ),
             )
@@ -47,9 +49,9 @@ class RekamPage extends StatelessWidget {
   }
 }
 
-itemRekam(String title, IconData iconData, Color gridColor) {
+itemRekam(String title, IconData iconData, Color gridColor, String routeName) {
   return GestureDetector(
-    onTap: () {},
+    onTap: () => Get.toNamed(routeName),
     child: Column(
       children: [
         Stack(
